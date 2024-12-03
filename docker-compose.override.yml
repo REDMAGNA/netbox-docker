@@ -1,0 +1,24 @@
+versión: '3.4'
+servicios:
+  caja de red:
+    puertos:
+    - 8080:8080
+    volúmenes:
+    - /volumen1/docker/netbox:/etc/netbox/config:z,ro
+    - archivos multimedia de netbox:/opt/netbox/netbox/media:z,rw
+    - archivos de informes de netbox:/opt/netbox/netbox/reports:z,rw
+    - archivos-scripts-netbox:/opt/netbox/netbox/scripts:z,rw
+    control de salud:
+      reintentos: 15
+  trabajador de netbox:
+    volúmenes:
+    - /volumen1/docker/netbox:/etc/netbox/config:z,ro
+    - archivos multimedia de netbox:/opt/netbox/netbox/media:z,rw
+    - archivos de informes de netbox:/opt/netbox/netbox/reports:z,rw
+    - archivos-scripts-netbox:/opt/netbox/netbox/scripts:z,rw
+  Mantenimiento de Netbox:
+    volúmenes:
+    - /volumen1/docker/netbox:/etc/netbox/config:z,ro
+    - archivos multimedia de netbox:/opt/netbox/netbox/media:z,rw
+    - archivos de informes de netbox:/opt/netbox/netbox/reports:z,rw
+    - archivos-scripts-netbox:/opt/netbox/netbox/scripts:z,rw
